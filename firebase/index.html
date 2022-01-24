@@ -3,12 +3,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link rel="stylesheet" href="styles.css">
   <title>firebase</title>
 </head>
 <body>
-  <h2>Databases(Firebase)</h2>
+  <div class="container my-5">
+    <h2>Recipes</h2>
+    <ul>
+      <li>Mushroom</li>
+      <li>Veg curry</li>
+    </ul>
+    <form action="">
+      <label for="recipe">Add a new recipe:</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="recipe">
+        <div class="input-group-append">
+          <input type="text" value="add" class="btn btn-outline-secondary">
+        </div>
+      </div>
+    </form>
+  </div>
 
+
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB3oLVtD-Y40mIiTjdSzvqF6k07cF8-LBY",
+    authDomain: "ninja-modern-js-f0f66.firebaseapp.com",
+    projectId: "ninja-modern-js-f0f66",
+    storageBucket: "ninja-modern-js-f0f66.appspot.com",
+    messagingSenderId: "799203777439",
+    appId: "1:799203777439:web:6fb9ee30b27ffe39fe3baa",
+    measurementId: "G-6TRRC2LYCL"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
   <script src="app.js"></script>
 </body>
 </html>
