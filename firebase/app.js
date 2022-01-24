@@ -14,17 +14,26 @@ const addRecipe = (recipe, id) => {
   list.innerHTML += html;
 };
 
-// get documents
-app.collection('recipes')
-  .get()
-  .then((snapshot) => {
-    snapshot.docs.forEach((doc) => {
-      addRecipe(doc.data(), doc.id);
-    });
+const deleteRecipe = (id) => {
+  const recipes = documents.querySelectorAll('li')
+  recipes.forEach(recipe => {
+    if(recipe.getAttribute('data-id') === id) {
+      recipe.remove()
+    }
   })
-  .catch((err) => {
-    console.log(err);
-  });
+}
+
+// get documents
+db.collection('recipes').onSnapShot(snapshot => {
+  snapshot.docChanges().forEach(change => {
+    const doc = change.doc
+    if (change.type === 'added') {
+      addRecipe(doc.data(), doc.id)
+    } else if (change.type === 'removed') {
+      deleteRecipe(doc.id)
+    }
+  })
+})
 
 // add documents
 form.addEventListener('submit', (e) => {
