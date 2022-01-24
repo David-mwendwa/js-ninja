@@ -1,5 +1,4 @@
-//using classes
-
+// using classes
 class Forecast {
   constructor() {
     this.key = 'tjiVtneJbUG9JbmCymfWhV5QqyYHgjE0';
@@ -27,3 +26,5 @@ class Forecast {
     return data[0];
   }
 }
+
+

@@ -30,15 +30,6 @@ const updateUI = ({ cityDetails, weather }) => {
   }
 };
 
-// const updateCity = async (city) => {
-//   const cityDetails = await getCity(city);
-//   const weather = await getWeather(cityDetails.Key);
-//   return {
-//     cityDetails,
-//     weather,
-//   };
-// };
-
 cityForm.addEventListener('submit', (e) => {
   e.preventDefault();
   // get city value
@@ -58,3 +49,12 @@ if (localStorage.getItem('city')) {
     .then((data) => updateUI(data))
     .catch((err) => console.log(err));
 }
+
+// const updateCity = async (city) => {
+//   const cityDetails = await getCity(city);
+//   const weather = await getWeather(cityDetails.Key);
+//   return {
+//     cityDetails,
+//     weather,
+//   };
+// };
