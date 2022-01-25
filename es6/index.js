@@ -34,3 +34,8 @@ const ninjas = new Set([
 ninjas.forEach(ninja => {
   console.log(ninja.name, ninja.age)
 })
+
+
+// Symbols
+const symbolOne = Symbol()
+const symbolTwo = Symbol()
